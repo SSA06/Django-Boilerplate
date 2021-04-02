@@ -3,8 +3,8 @@ from django.shortcuts import reverse, redirect
 
 def redirect_to_nxt(request, redirect_path):
     """
-    Redirect to GET["next"] if it exists.
-    Navigate to redirect_path if none exists
+    Redirect to GET.get("next") if it exists.
+    Else, redirect to redirect_path.
     """
     nxt = request.GET.get("next", None)
     if nxt is not None:
